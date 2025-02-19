@@ -1,8 +1,8 @@
-## Getting Started 34an tb2o fahmin
+## Getting Started 34an tb2o fahmin (bs lazm al python eb2a sh8al 3la al ghaz)
 
-**To run the server & AI**
+**To run the server & AI    (Lw 7abb T test)**
 
-**1.Download it**
+**1.Download the folder named => (ats_ai+server+connected - Copy)**
 
 **2.Install dependencies: (Packages)**
    pip install -r requirements.txt
@@ -12,17 +12,31 @@
 
 **4. Run the server:**
    python server.py
+
+   **Note**
+   bt3dl ip bta3 file server.py 7sp ip bta3 ghazk   // ipconfig a3mlha gowa terminal 34an t3rf your ip
+
    
 **__________________________________________________________________________________________________________________________________________________**
 
 
+**To run the flutter App & AI    (Lw 7abb T test)**
 
-**To run the flutter App & AI**
-
-**1.Download it**
+**1.Download the folder named => (flutter all screens + yml + ai connection)**
+   **Download the folder named => (ats_ai+server+connected - Copy)**
 
 **2. Run the server (Flask)**
-   pip install -r requirements.txt
+   python server.py
+
+**3. 5od el lib bdlo bl lib al 3ndk howa ol yml**
+
+**4. 5osh el yml => pup get**
+
+**5. Flutter run**
+
+
+  **Note**
+   bt3dl ip bta3 file server.py     7sp ip bta3 ghazk   // ipconfig a3mlha gowa terminal 34an t3rf your ip
+   bt3dl satr 46 f ats_screen.dart  7sp ip bta3 ghazk
    
 
-**5li balkoo lazm eb2a al python eb2a sh8al 3l ghaz**
