@@ -1,4 +1,4 @@
-## Getting Started 34an tb2o fahmin (bs lazm al python eb2a sh8al 3la al ghaz)
+## Getting Started 34an tb2o fahmin (bs lazm al Python eb2a sh8al 3la al ghaz)
 
 **To run the server & AI    (Lw 7abb T test)**
 
