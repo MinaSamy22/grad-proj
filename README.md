@@ -28,12 +28,15 @@
 
 **2. Run the server (Flask)**
    python server.py
+   
+**3. Run the AI**
+   python app.py
 
-**3. 5od el lib bdlo bl lib al 3ndk howa ol yml**
+**4. 5od el lib bdlo bl lib al 3ndk howa ol yml**
 
-**4. 5osh el yml => pup get**
+**5. 5osh el yml => pup get**
 
-**5. Flutter run**
+**6. Flutter run**
 
 
   **Note**
