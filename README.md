@@ -2,9 +2,9 @@
 
 **To run the server & AI    (Lw 7abb T test)**
 
-**1.Download the folder named => (ats_ai+server+connected - Copy)**
+**1. Download the folder named => (ats_ai+server+connected - Copy)**
 
-**2.Install dependencies (Packages) :**
+**2. Install dependencies (Packages) :**
    pip install -r requirements.txt
    
 **3. Run the ai model:**
