@@ -4,6 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:http/http.dart' as http;
 import 'package:http_parser/http_parser.dart';
 import 'dart:convert';
+import 'info/ATSMoreInfoScreen.dart';
 
 class AtsScreen extends StatefulWidget {
   static const String routeName = '/AtsScreen';
@@ -95,8 +96,18 @@ class _AtsScreenState extends State<AtsScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text('ATS Tracking System'),
-        centerTitle: true,
         backgroundColor: Colors.white,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.info_outline, color: Colors.black), // Info icon
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ATSMoreInfoScreen()),
+              );
+            },
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
