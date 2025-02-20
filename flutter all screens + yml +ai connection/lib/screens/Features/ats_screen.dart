@@ -92,7 +92,7 @@ class _AtsScreenState extends State<AtsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text('ATS Tracking System'),
         centerTitle: true,
@@ -232,14 +232,38 @@ class _AtsScreenState extends State<AtsScreen> {
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 10),
-              Text(
-                aiResponse,
-                style: TextStyle(fontSize: 16, color: Colors.black87),
+              Text.rich(
+                TextSpan(
+                  children: _parseBoldText(aiResponse),
+                ),
               ),
             ],
           ],
         ),
       ),
     );
+  }
+
+  /// Function to parse `__bold__` text and return formatted spans
+  List<TextSpan> _parseBoldText(String text) {
+    final regex = RegExp(r'__(.*?)__'); // Detects __bold__ text
+    final spans = <TextSpan>[];
+
+    text.splitMapJoin(
+      regex,
+      onMatch: (match) {
+        spans.add(TextSpan(
+          text: match.group(1),
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ));
+        return '';
+      },
+      onNonMatch: (nonBoldText) {
+        spans.add(TextSpan(text: nonBoldText));
+        return '';
+      },
+    );
+
+    return spans;
   }
 }
