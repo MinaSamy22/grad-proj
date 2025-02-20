@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request, jsonify
 import os
 import json
-import requests  # To send requests to the AI model
+import requests
+import re
 
 # Server IP and PORT
 Server = '192.168.1.4'
@@ -62,34 +63,32 @@ def submit():
     ai_response = send_to_ai_model(job_description, cv_path)
     print("AI Model Response:", ai_response)
 
+    # Process AI response (Format text and apply bold)
+    processed_response = process_ai_response(ai_response)
+
     # Save the AI response in a JSON file named "result.json"
     result_json_path = os.path.join(submission_folder, "result.json")
     with open(result_json_path, 'w', encoding='utf-8') as result_file:
-        json.dump(ai_response, result_file, indent=4)
+        json.dump({"ai_response": processed_response}, result_file, indent=4)
 
     print(f"AI response saved in JSON: {result_json_path}")
 
     return jsonify({
         "message": "Application submitted successfully!",
         "folder": submission_folder,
-        "ai_response": ai_response
+        "ai_response": processed_response
     })
 
 def send_to_ai_model(job_description, cv_path):
     """
     Send the job description and CV to the AI model and get the response.
     """
-    # URL of the AI model server (assuming it's running locally on port 8501)
     ai_model_url = "http://localhost:8501/process"
 
     # Prepare the payload
     with open(cv_path, 'rb') as cv_file:
-        files = {
-            'file': cv_file
-        }
-        data = {
-            'input_text': job_description  # Ensure the job description is passed correctly
-        }
+        files = {'file': cv_file}
+        data = {'input_text': job_description}
 
         # Send a POST request to the AI model
         response = requests.post(ai_model_url, files=files, data=data)
@@ -98,6 +97,29 @@ def send_to_ai_model(job_description, cv_path):
         return response.json()
     else:
         return {"error": "Failed to get response from AI model"}
+
+def process_ai_response(ai_response):
+    """
+    Process AI response by:
+    1. Removing the 'result' key if present.
+    2. Formatting response into multiple lines.
+    3. Converting **bold text** into __bold__ for Flutter.
+    """
+    if isinstance(ai_response, dict) and "result" in ai_response:
+        response_text = ai_response["result"]
+    else:
+        response_text = ai_response
+
+    if isinstance(response_text, str):
+        # Add line breaks for readability
+        formatted_text = response_text.replace(". ", ".\n")
+
+        # Convert **bold text** to __bold__ (for Flutter)
+        formatted_text = re.sub(r'\*\*(.*?)\*\*', r'__\1__', formatted_text)
+
+        return formatted_text  # Return as a single string
+    
+    return str(response_text)  # Convert non-string responses to string
 
 if __name__ == '__main__':
     app.run(host=Server, port=Port, debug=True)
