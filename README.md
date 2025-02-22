@@ -27,7 +27,7 @@
    **Download the folder named => (ats_ai+server+connected - Copy)**
 
   
-  **GO TO VS Code (python enviroment) open inside it ->**
+  **GO TO VS Code (python enviroment) open inside it folder -> ats_ai + server + connected - Copy**
 
 **2. Run the server (Flask)**
    python server.py
