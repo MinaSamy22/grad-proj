@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'main_screen.dart'; // Import your main screen file
 
 class FeedbackScreen extends StatefulWidget {
   static const String routeName = "/FeedbackScreen";
@@ -13,7 +14,18 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text('Feedback'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => MainScreen()), // Navigate to MainScreen
+            );
+          },
+        ),
+      ),
       body: Padding(
         padding: EdgeInsets.all(20.0),
         child: Column(
