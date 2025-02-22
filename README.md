@@ -27,7 +27,7 @@
    **Download the folder named => (ats_ai+server+connected - Copy)**
 
   
-  **GO TO VS Code (python enviroment) open inside it folder -> ats_ai + server + connected - Copy**
+  **# GO TO VS Code (python enviroment) open inside it folder -> ats_ai + server + connected - Copy**
    
 **2. Run the AI**
    python app.py
@@ -36,7 +36,7 @@
   python server.py
    
 
-  **GO TO Android studio**
+  **# GO TO Android studio**
 
 **4. 5od el lib bdlo bl lib al 3ndk howa ol yml**
 
