@@ -26,11 +26,17 @@
 
    **Download the folder named => (ats_ai+server+connected - Copy)**
 
+  
+  **GO TO VS Code (python enviroment) open inside it ->**
+
 **2. Run the server (Flask)**
    python server.py
    
 **3. Run the AI**
    python app.py
+   
+
+  **GO TO Android studio**
 
 **4. 5od el lib bdlo bl lib al 3ndk howa ol yml**
 
