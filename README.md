@@ -42,12 +42,16 @@
 
 **5. 5osh el yml => pup get**
 
-**6. Flutter run**
-
 
   **Note**
    bt3dl ip bta3 file server.py     7sp ip bta3 ghazk   // ipconfig a3mlha gowa terminal 34an t3rf your ip
    
    bt3dl satr 46 f ats_screen.dart  7sp ip bta3 ghazk
+
+
+**6. Flutter run**
+
+
+
    
 
