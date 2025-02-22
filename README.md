@@ -22,7 +22,7 @@
 
 **To run the flutter App with AI    (Lw 7abb T test)**
 
-**1. Download the folder named => (flutter all screens + yml + ai connection)**
+**1. Download the folder named => (Graduation project)**
 
    **Download the folder named => (ats_ai+server+connected - Copy)**
 
