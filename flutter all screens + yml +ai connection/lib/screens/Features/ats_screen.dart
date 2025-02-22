@@ -4,6 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:http/http.dart' as http;
 import 'package:http_parser/http_parser.dart';
 import 'dart:convert';
+import 'main_screen.dart'; // Import your main screen file
 import 'info/ATSMoreInfoScreen.dart';
 
 class AtsScreen extends StatefulWidget {
@@ -44,7 +45,7 @@ class _AtsScreenState extends State<AtsScreen> {
       // Create a multipart request
       var request = http.MultipartRequest(
         'POST',
-        Uri.parse('http://192.168.1.4:5000/submit'), // Replace with your server IP
+        Uri.parse('http://192.168.1.6:5000/submit'), // Replace with your server IP
       );
 
       // Add the job description
@@ -96,6 +97,16 @@ class _AtsScreenState extends State<AtsScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text('ATS Tracking System'),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => MainScreen()), // Navigate to MainScreen
+              );
+            },
+          ),
+
         backgroundColor: Colors.white,
         actions: [
           IconButton(
