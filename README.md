@@ -28,12 +28,12 @@
 
   
   **GO TO VS Code (python enviroment) open inside it folder -> ats_ai + server + connected - Copy**
-
-**2. Run the server (Flask)**
-   python server.py
    
-**3. Run the AI**
+**2. Run the AI**
    python app.py
+
+**3. Run the server (Flask)**
+  python server.py
    
 
   **GO TO Android studio**
